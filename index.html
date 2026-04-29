@@ -1,9 +1,9 @@
 <!-- Unit 12 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
+[x  ] Two Interactive Drop-down Inputs 
 [  ] Standard Animation
 [  ] Custom Animation
-[  ] Include Three Images
+[ x ] Include Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Google Font
@@ -21,40 +21,45 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>Quiz About ALDEN</h1>
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
-        🎥 What is my favorite movie?
+        What is my sport?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">BASEBALL</option>
+          <option value="movie2">BASKETBALL</option>
+          <option value="movie3">VOLLEYBALL</option>
+          <option value="movie4">ULTIMATE FRISBEE</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
     <div id="movie-result">
       <p id="movie-text"></p>
+      <img class="VB-IMAGE">
+      
     </div>
     <hr />
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
+        who IS THAT
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">?</option>
+          <option value="book2">??</option>
+          <option value="book3">??!</option>
+          <option value="book4">???!</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
     <div id="book-result">
       <p id="book-text"></p>
+      <img class="whoisthat">
+      <img class="thedud">
+      
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
@@ -66,11 +71,14 @@ Select ONE Additional Feature to Add
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-text").text("YESSSS!");
+        if (answer === "movie3") {
+          $("#movie-text").text("YURP");
+          $(".VB-IMAGE").attr("src","https://static.vecteezy.com/system/resources/thumbnails/035/320/507/small/ai-generated-volleyball-ball-isolated-on-transparent-background-free-png.png").fadeIn(1000)
         } 
         else {
-          $("#movie-text").text("Try Again!");
+          $("#movie-text").text("*Incorrect Buzzer*");
+          $(".VB-IMAGE").hide()
+
         }
       });
 
@@ -82,10 +90,13 @@ Select ONE Additional Feature to Add
         var answer = $answer.val();
 
         if (answer === "book1") {
-          $("#book-text").text("YESSSS!");
+          $(".whoisthat").attr("src","https://media.tenor.com/JWzIaFEJs2gAAAAM/who-is-he.gif");
+          $(".thedud").hide()
         } 
         else {
-          $("#book-text").text("Try Again!");
+          $("#book-text").text("WRONG, you get The Dud");
+          $(".thedud").attr("src","https://static.wikia.nocookie.net/simpsonsfanon/images/6/6c/Dudhouse.jpeg/revision/latest?cb=20230405094645")show(1000);
+         $(".whoisthat").hide()
         }
       });
       
