@@ -1,15 +1,15 @@
 <!-- Unit 12 Project
 Requirements
 [x  ] Two Interactive Drop-down Inputs 
-[  ] Standard Animation
-[  ] Custom Animation
+[ x ] Standard Animation
+[x  ] Custom Animation
 [ x ] Include Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Google Font
 [ no ] Feature 2 - Chain jQuery Methods
 [ no ] Feature 3 - .mouseover() & .mouseOut() Methods
-[ no ] Feature 4 - :hover Feature 
+[ x] Feature 4 - :hover Feature 
 [ no ] Feature 5 - Add an Additional Interactive Drop-down
 -->
 
@@ -61,6 +61,7 @@ Select ONE Additional Feature to Add
       <img class="thedud">
       
     </div>
+    <button id="deez">press</button>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       
@@ -76,7 +77,7 @@ Select ONE Additional Feature to Add
           $(".VB-IMAGE").attr("src","https://static.vecteezy.com/system/resources/thumbnails/035/320/507/small/ai-generated-volleyball-ball-isolated-on-transparent-background-free-png.png").fadeIn(1000)
         } 
         else {
-          $("#movie-text").text("*Incorrect Buzzer*");
+          $("#movie-text").text("wrong");
           $(".VB-IMAGE").hide()
 
         }
@@ -90,16 +91,36 @@ Select ONE Additional Feature to Add
         var answer = $answer.val();
 
         if (answer === "book1") {
-          $(".whoisthat").attr("src","https://media.tenor.com/JWzIaFEJs2gAAAAM/who-is-he.gif");
+          $(".whoisthat").attr("src","https://media.tenor.com/JWzIaFEJs2gAAAAM/who-is-he.gif").fadeIn(1000);
           $(".thedud").hide()
+          $("#book-text").hide()
         } 
         else {
-          $("#book-text").text("WRONG, you get The Dud");
-          $(".thedud").attr("src","https://static.wikia.nocookie.net/simpsonsfanon/images/6/6c/Dudhouse.jpeg/revision/latest?cb=20230405094645")show(1000);
-         $(".whoisthat").hide()
-        }
+          $("#book-text").text("WRONG");
+          $(".thedud").attr("src","https://static.wikia.nocookie.net/simpsonsfanon/images/6/6c/Dudhouse.jpeg/revision/latest?cb=20230405094645").show(1000);
+          $(".whoisthat").hide()
+        } 
       });
-      
+       $("#deez").click(function () {
+        $("#deez").animate({
+          width: "50px",
+          height: "30px",
+          marginLeft: "0px",
+          marginTop: "0px",
+          rotate: "-1080deg",
+        })
+        
+       });
+          $("#deez").mouseover(function () {
+        $("#deez").animate({
+          width: "100px",
+          height: "100px",
+          marginLeft: "200px",
+          marginTop: "50px",
+          rotate: "1080deg",
+        })
+        
+       });
     </script>
   </body>
 
